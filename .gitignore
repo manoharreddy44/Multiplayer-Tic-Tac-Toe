@@ -6,4 +6,9 @@ build/
 coverage/
 .env
 .env.*
+!.env.example
+!client/.env.example
 postgres_data/
+*.tsbuildinfo
+client/vite.config.js
+client/vite.config.d.ts
