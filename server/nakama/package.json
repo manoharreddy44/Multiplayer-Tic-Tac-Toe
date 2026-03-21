@@ -4,11 +4,11 @@
   "private": true,
   "description": "Authoritative Nakama runtime for multiplayer Tic-Tac-Toe.",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build": "npm run clean && npm run typecheck && tsc src/runtime.ts --target es2018 --module none --outFile build/index.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
     "clean": "rimraf build"
   },
   "devDependencies": {
-    "@types/node": "^24.0.0",
     "rimraf": "^6.0.1",
     "typescript": "^5.9.2"
   }

@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
     "target": "ES5",
-    "module": "commonjs",
+    "module": "esnext",
+    "lib": ["es2018"],
     "strict": true,
     "moduleResolution": "node",
     "rootDir": "src",
@@ -10,11 +11,10 @@
     "noImplicitAny": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
-    "types": [
-      "node"
-    ]
+    "types": []
   },
   "include": [
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "src/**/*.d.ts"
   ]
 }

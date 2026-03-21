@@ -17,6 +17,8 @@ declare namespace nkruntime {
   interface MatchmakerResult {
     presence: Presence;
     properties?: Record<string, unknown>;
+    stringProperties?: Record<string, string>;
+    numericProperties?: Record<string, number>;
   }
 
   interface MatchMessage {
@@ -32,6 +34,34 @@ declare namespace nkruntime {
   interface Nakama {
     matchCreate(module: string, params?: Record<string, unknown>): string;
     binaryToString(data: Uint8Array): string;
+    storageRead(objects: Array<{ collection: string; key: string; userId: string }>): Array<{ value: unknown }>;
+    storageWrite(
+      objects: Array<{
+        collection: string;
+        key: string;
+        userId: string;
+        value: unknown;
+        permissionRead?: number;
+        permissionWrite?: number;
+      }>
+    ): void;
+    leaderboardCreate(
+      id: string,
+      authoritative: boolean,
+      sortOrder: "asc" | "desc",
+      operator: "best" | "set" | "incr" | "decr",
+      resetSchedule?: string | null,
+      metadata?: Record<string, unknown>,
+      enableRanks?: boolean
+    ): void;
+    leaderboardRecordWrite(
+      leaderboardId: string,
+      ownerId: string,
+      username?: string,
+      score?: number,
+      subscore?: number,
+      metadata?: Record<string, unknown>
+    ): void;
   }
 
   interface MatchInitResult<TState> {
