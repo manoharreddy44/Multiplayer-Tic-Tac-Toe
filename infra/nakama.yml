@@ -1,0 +1,8 @@
+name: "nakama1"
+socket:
+  server_key: "devkey"
+session:
+  token_expiry_sec: 7200
+console:
+  username: "admin"
+  password: "password"
