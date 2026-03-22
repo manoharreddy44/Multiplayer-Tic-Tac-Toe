@@ -1,3 +1,6 @@
+🚀 Live Demo
+Game URL: http://54.205.121.154
+
 # Multiplayer Tic-Tac-Toe (Server-Authoritative)
 
 Production-style multiplayer Tic-Tac-Toe built with Nakama runtime + React (Vite), optimized for mobile-first play and reviewer-friendly setup.
